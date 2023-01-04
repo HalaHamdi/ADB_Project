@@ -1,12 +1,4 @@
-// change the following  sql query to mongodb
-// select suppliers.name
-// from suppliers
-// join products on suppliers.id = products.supplier_id
-// join ratings on products.id = ratings.product_id
-// group by suppliers.name
-// having avg(Cast(rating as Float)) >= 3.1 
-
-// write the mongodb query here
+// Q1
 db.suppliers.aggregate([
     {
         $lookup: {
@@ -54,14 +46,9 @@ db.suppliers.aggregate([
     }
 ])
 
-// change the following  sql query to mongodb
-// select customers.name
-// from customers
-// join orders on customers.id = orders.customer_id
-// group by customers.id
-// having sum(orders.total_price) > 100
 
-// write the mongodb query here
+
+// Q2:
 db.customers.aggregate([
     {
         $lookup: {
@@ -94,17 +81,8 @@ db.customers.aggregate([
 
 
 
-// change the following  sql query to mongodb
-// select product_name, sum(quantity) as total_quantity
-// from products
-// join order_items on products.id = order_items.product_id
-// join suppliers on products.supplier_id = suppliers.id
-// where suppliers.name = ‘Maurice Wallace1715’
-// group by product_name
-// order by total_quantity desc
-// limit 1; 
 
-// write the mongodb query here
+//Q3:
 db.products.aggregate([
     {
         $lookup: {
@@ -153,20 +131,10 @@ db.products.aggregate([
 
 
 
-// change the following  sql query to mongodb
-// select count(customer_order.id) as customers_count
-// from (
-// select count(customers.id) as total_record, customers.id, customers.name
-// from customers
-// join orders on orders.customer_id = customers.id
-// join order_items on order_items.order_id = orders.id
-// where age>25 and age<35
-// group by customers.id
-// having count(DISTINCT orders.id) >= 2
-// and count(order_items.product_id) >= 3) customer_order;
 
 
-// write the mongodb query here
+
+// Q4:
 db.customers.aggregate([
     {
         $lookup: {
