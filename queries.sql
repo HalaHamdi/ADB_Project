@@ -1,12 +1,10 @@
---  write me a sql query to get  the 10 most selling products for supplier with id 1
---  i have the following tables
+--  having following tables
 --  products (id, product_name, price, category,supplier_id)
 --  orders (id, customer_id, quantity, date, hour)
 --  order_items (order_id, product_id, quantity)
 --  customers (id, name, age, governorate,gender)
 --  suppliers (id, name)
 --  ratings (customer_id, product_id, rating)-- 
-
 
 -- query 1
 select suppliers.name
