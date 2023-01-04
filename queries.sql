@@ -6,7 +6,6 @@
 --  customers (id, name, age, governorate,gender)
 --  suppliers (id, name)
 --  ratings (customer_id, product_id, rating)-- 
---  i want to get the 10 most selling products for supplier with id 1
 
 
 -- query 1
@@ -37,7 +36,6 @@ having sum(orders.total_price) > 100
 
 -- query 3
 -- part one fetch the need supplier name via:
-
 select count(products.id), suppliers.name
 from suppliers
 join products on suppliers.id = products.supplier_id
